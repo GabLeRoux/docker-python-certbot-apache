@@ -21,4 +21,6 @@ RUN apt-get update \
   && apt-get clean
 
 # Smoke test
-RUN certbot --version
+RUN certbot --version \
+  && curl --version \
+  && jq --version
