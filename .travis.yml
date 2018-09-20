@@ -1,0 +1,15 @@
+sudo: required
+language: ruby
+env:
+  - IMAGE_NAME=$DOCKER_USERNAME/docker-python-certbot-apache
+services:
+- docker
+script:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker build . -t $IMAGE_NAME:$TRAVIS_COMMIT
+- docker push $IMAGE_NAME:$TRAVIS_COMMIT
+- |
+  if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker tag $IMAGE_NAME:$TRAVIS_COMMIT $IMAGE_NAME:latest
+    docker push $IMAGE_NAME:latest
+  fi
