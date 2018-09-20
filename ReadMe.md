@@ -7,13 +7,20 @@
 [![Version](https://images.microbadger.com/badges/version/gableroux/docker-python-certbot-apache.svg)](https://microbadger.com/images/gableroux/docker-python-certbot-apache)
 [![Layers](https://images.microbadger.com/badges/image/gableroux/docker-python-certbot-apache.svg)](https://microbadger.com/images/gableroux/docker-python-certbot-apache)
 
-docker image to use `python-certbot-apache`.
+Docker image with `python-certbot-apache` ubuntu package installed.
 
-Installation instructions grabbed from here:  
+## Included command lines
+
+* certbot
+* curl
+* jq
+
+## Why?
+
+I wanted to auto renew certs for gitlab-ci
+
+Installation instructions grabbed from here and updated to actually work:  
 https://gitlab.com/DylanGriffith/dylans-home/blob/fdd94717/.gitlab-ci.yml#L3
-
-Mostly done for gitlab certificates automatic renewal based on following comment:  
-https://gitlab.com/gitlab-org/gitlab-ce/issues/28996#note_68203009
 
 ## License
 

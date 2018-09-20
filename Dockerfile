@@ -7,6 +7,7 @@ RUN apt-get update \
   software-properties-common \
   tzdata \
   locales \
+  jq \
   && echo "Australia/Sydney" > /etc/timezone \
   && dpkg-reconfigure -f noninteractive tzdata \
   && echo 'LANG="en_US.UTF-8"'>/etc/default/locale \
